@@ -52,6 +52,10 @@ function getTextFromTextareaAndStoreItIntoTheState () {
 
     let vocabularyToStudy = vocabulary.split("\n");
 
+    vocabularyToStudy = vocabularyToStudy.filter(item => item !== "");
+
+    console.log(vocabularyToStudy);
+
     
 
     vocabularyToStudy.forEach(item => {
@@ -68,7 +72,7 @@ function getTextFromTextareaAndStoreItIntoTheState () {
 
     });
 
-    
+    console.log(state.vocabularyOfObjectsInitial);
    
 }
 
@@ -174,8 +178,12 @@ if(state.vocabularyOfObjectsStudied.length === 0) {
         wrongWordsCountToDisplay.sort((a,b) => b.count - a.count);
 
         wrongWordsCountToDisplay.forEach(item => {
+
+            let filteredTarget = state.vocabularyOfObjectsInitial.filter(kelime => kelime.studied === item.word);
+            let meaning = filteredTarget[0].meaning;
+
             let element = document.createElement("p");
-            element.innerHTML = ` ${item.word} was wrong ${item.count} times `;
+            element.innerHTML = ` ${item.word} (= ${meaning}) was wrong ${item.count} times `;
             divDisplayWrongWords.append(element);
         });
 
@@ -337,14 +345,14 @@ function findMeaning () {
 
     let meaning = filtered[0].meaning
 
-   return meaning
+   return [wordToSearch, meaning]
 
 
 }
 
 wordDisplayed.addEventListener("click", function(e) {
-    let meaning = findMeaning();
-    wordDisplayed.textContent += ` = ${meaning}`
+    let [wordToSearch, meaning] = findMeaning();
+    wordDisplayed.innerHTML = `${wordToSearch} = ${meaning}`
 })
 
 

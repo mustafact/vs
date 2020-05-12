@@ -4,6 +4,10 @@ body {
     margin-left: 3%;
 }
 
+#head-title {
+    margin-bottom: 5%;
+}
+
 
 #div-text-input {
     margin-top: 8%;
@@ -15,11 +19,22 @@ body {
     display : none;
     margin-top: 20%;
     margin-left: 3%;
+    margin-right: 40%;
+    
 
+  
 }
+
+
 
 #div-view-report {
 
     display : none;
+    margin-top: 10%;
 
+}
+
+#buttons-correct-wrong {
+    
+    margin-top: 10%;
 }
