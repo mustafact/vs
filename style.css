@@ -1,0 +1,25 @@
+
+body {
+    margin-top: 5%;
+    margin-left: 3%;
+}
+
+
+#div-text-input {
+    margin-top: 8%;
+}
+
+
+#div-view-study {
+
+    display : none;
+    margin-top: 20%;
+    margin-left: 3%;
+
+}
+
+#div-view-report {
+
+    display : none;
+
+}

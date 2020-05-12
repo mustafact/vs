@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Vocabulary Study</h2>
+
+
+    <div id="select-language">
+
+        <label for="language">select :</label>
+        
+        <select name="language" id="language">
+            
+            <option value="">language</option>
+            <option value="japanese">japanese</option>
+            <option value="chinese">chinese</option>
+            <option value="russian">russian</option>
+
+
+
+
+        </select>
+       
+
+    </div>
+
+
+
+
+    <div id="div-view-home">
+
+    
+        <div id="div-text-input">
+            <textarea name="textarea-text-input" id="textarea-text-input" cols="30" rows="30" placeholder="paste from excel 2 rows"></textarea>
+        </div>
+        <div id="button-text-input">
+            <button id="button-textarea-text-input">GO</button>
+        </div>
+
+    </div>
+
+
+    <div id="div-view-study">
+
+        <div id="div-word-display">
+
+            <h3 id="word-displayed"></h3>
+
+            <div id="buttons-correct-wrong">
+                <button id="button-correct">correct</button>
+                <button id="button-wrong">wrong</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="div-view-report">
+
+        <div id="div-display-wrong-words">
+
+        </div>
+
+        <button id="button-exit">exit</button>
+
+
+    </div>
+
+
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>
