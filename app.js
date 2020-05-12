@@ -136,11 +136,20 @@ state.vocabularyOfObjectsStudied = state.vocabularyOfObjectsStudied.filter(item 
 // handle the situation when there is no word left in the study array
 if(state.vocabularyOfObjectsStudied.length === 0) {
 
-    wordDisplayed.textContent = "no words left";
+    wordDisplayed.textContent = "no words left to study";
 
-    let directive = confirm("no words left... study the unnown words?");
+    let directive = confirm("no words left... study the unknown words?");
 
     if(directive) {
+
+
+        if(state.vocabularyWrong.length === 0) {
+            alert("congratulations! no words answered wrong...exitting to homepage");
+            location.reload();
+        }
+
+
+
 
         // set of unknown words :
 
@@ -173,7 +182,7 @@ if(state.vocabularyOfObjectsStudied.length === 0) {
 
         let wrongWordsCountToDisplay = trackWrongWords();
 
-        console.log(wrongWordsCountToDisplay);
+        if(wrongWordsCountToDisplay.length > 0) {
 
         wrongWordsCountToDisplay.sort((a,b) => b.count - a.count);
 
@@ -187,6 +196,13 @@ if(state.vocabularyOfObjectsStudied.length === 0) {
             divDisplayWrongWords.append(element);
         });
 
+    } else {
+
+        divDisplayWrongWords.textContent = "There are no unknown words."
+
+    }
+
+    
     }
 
     return;
